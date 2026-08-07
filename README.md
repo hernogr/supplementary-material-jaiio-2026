@@ -55,6 +55,7 @@ SR bands are converted from DN to surface reflectance (scale: `× 0.0000275 − 
 | NDSI | (Green − SWIR1) / (Green + SWIR1) | Background snow cover detection |
 | NDWI | (Green − NIR) / (Green + NIR) | Water extent |
 
+> **Note on NDWI formula:** The equation implemented in the pipeline and reported above corresponds to the Normalized Difference Water Index (NDWI) defined by McFeeters (1996) using Green and NIR bands. Please note that due to a typographical error in the methodology section of the published paper, the formula was mistakenly printed using the Gao (1996) formulation (NIR and SWIR1). All calculations, pixel masking, and results presented in the paper and dataset strictly utilize the McFeeters (1996) index.
 Background snow masking: pixels in the background ring with NDSI > 0.4 and LST < 2°C are excluded. If more than 50% of the background is snow-covered, the thermal anomaly (lake − background) is flagged as invalid for that scene.
 
 ### 4. Inter-sensor calibration
